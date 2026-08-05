@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOW DO YOU SAY IT? · Comparativos y Superlativos · Módulo 4 · Tandas de 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --selva:#1FA84A;
+  --selva-osc:#127031;
+  --amarillo:#FFD400;
+  --caribe:#00B7C2;
+  --magenta:#E8368F;
+  --tinta:#12304A;
+  --crema:#FFF8E7;
+  --rojo:#E23B2E;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,183,194,.25)}
+html,body{height:100%}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  font-family:'Nunito',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  color:#12304A;color:var(--tinta);
+  background:#EAFBEF;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(255,212,0,.45) 0%, rgba(255,212,0,.45) 22%, rgba(255,212,0,0) 23%),
+    radial-gradient(circle at 88% 82%, rgba(0,183,194,.40) 0%, rgba(0,183,194,.40) 20%, rgba(0,183,194,0) 21%),
+    radial-gradient(circle at 78% 12%, rgba(232,54,143,.28) 0%, rgba(232,54,143,.28) 14%, rgba(232,54,143,0) 15%),
+    linear-gradient(160deg,#EAFBEF 0%, #FFF8E7 55%, #E4F7FA 100%);
+  background-repeat:no-repeat;
+  min-height:100%;
+  padding:18px;
+  display:-webkit-box;display:-webkit-flex;display:flex;
+  -webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;
+  -webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;
+}
+.app{width:100%;max-width:1180px}
+
+/* ---------- BARRA SUPERIOR ---------- */
+.topbar{
+  display:-webkit-box;display:-webkit-flex;display:flex;
+  -webkit-flex-wrap:wrap;flex-wrap:wrap;
+  -webkit-align-items:center;align-items:center;
+  -webkit-justify-content:space-between;justify-content:space-between;
+  background:var(--tinta);color:#fff;border-radius:22px;padding:10px 16px;
+  box-shadow:0 8px 0 rgba(18,48,74,.25);
+}
+.topbar > *{margin:4px 6px}
+.brand{font-family:'Baloo 2','Trebuchet MS',cursive;font-size:26px;font-size:clamp(20px,2.6vw,30px);line-height:1;letter-spacing:.5px}
+.brand span{color:var(--amarillo)}
+.stats{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap}
+.stats > *{margin:4px 5px}
+.chip{
+  background:#fff;color:var(--tinta);border-radius:14px;padding:8px 14px;
+  font-weight:900;font-size:18px;font-size:clamp(15px,1.7vw,20px);white-space:nowrap;
+}
+.chip b{color:var(--selva)}
+.chip.mag b{color:var(--magenta)}
+.iconbtn{
+  background:var(--amarillo);border:none;border-radius:14px;padding:8px 14px;
+  font-family:'Nunito',-apple-system,sans-serif;font-weight:900;font-size:18px;cursor:pointer;color:var(--tinta);
+  -webkit-appearance:none;appearance:none;touch-action:manipulation;
+}
+button:focus{outline:4px solid var(--caribe);outline-offset:3px}
+button:focus:not(:focus-visible){outline:none}
+button:focus-visible{outline:4px solid var(--caribe);outline-offset:3px}
+
+/* ---------- PROGRESO DE LA TANDA (5 hojas) ---------- */
+.leaves{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:center;justify-content:center;margin:16px 0 6px}
+.leaf{
+  width:34px;height:34px;width:clamp(24px,3.4vw,44px);height:clamp(24px,3.4vw,44px);
+  border-radius:50% 12% 50% 12%;margin:4px;-webkit-flex:none;flex:none;
+  background:#fff;border:5px solid var(--selva);
+  -webkit-transition:.25s -webkit-transform,.25s background;transition:.25s transform,.25s background;
+}
+.leaf.ok{background:var(--selva)}
+.leaf.no{background:var(--rojo);border-color:var(--rojo)}
+.leaf.now{-webkit-transform:scale(1.18) rotate(-8deg);transform:scale(1.18) rotate(-8deg);border-color:var(--magenta)}
+
+/* ---------- TARJETA PRINCIPAL ---------- */
+.card{
+  background:#fff;border-radius:30px;margin-top:14px;padding:clamp(20px,3.2vw,38px);
+  box-shadow:0 14px 0 rgba(18,48,74,.14);border:6px solid var(--tinta);
+}
+.grid{display:-ms-grid;display:grid;grid-template-columns:1fr 1fr;grid-gap:28px;gap:28px;grid-gap:clamp(18px,3vw,40px);gap:clamp(18px,3vw,40px);-webkit-align-items:center;align-items:center}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+
+.qnum{
+  display:inline-block;background:var(--magenta);color:#fff;font-family:'Baloo 2','Trebuchet MS',cursive;
+  font-size:21px;font-size:clamp(18px,2vw,24px);padding:4px 16px;border-radius:999px;margin-bottom:14px;
+}
+.qtext{font-family:'Baloo 2','Trebuchet MS',cursive;font-size:34px;font-size:clamp(26px,3.6vw,44px);line-height:1.2}
+.marker{
+  background:-webkit-linear-gradient(top,rgba(255,212,0,0) 18%, #FFD400 18%, #FFD400 92%, rgba(255,212,0,0) 92%);
+  background:linear-gradient(180deg,rgba(255,212,0,0) 18%, #FFD400 18%, #FFD400 92%, rgba(255,212,0,0) 92%);
+  padding:0 6px;
+  -webkit-text-decoration-line:underline;text-decoration-line:underline;
+  -webkit-text-decoration-style:wavy;text-decoration-style:wavy;
+  -webkit-text-decoration-color:#E8368F;text-decoration-color:#E8368F;
+  text-underline-offset:8px;
+}
+.qtext .tail{color:var(--caribe)}
+
+/* ---------- OPCIONES A COLOR ---------- */
+.options{display:-ms-grid;display:grid;grid-template-columns:1fr 1fr;grid-gap:18px;gap:18px;grid-gap:clamp(12px,2vw,22px);gap:clamp(12px,2vw,22px)}
+@media(max-width:480px){.options{grid-template-columns:1fr}}
+.opt{
+  position:relative;border-radius:24px;
+  min-height:124px;min-height:clamp(110px,15vw,150px);padding:18px 14px 14px;cursor:pointer;
+  font-family:'Nunito',-apple-system,sans-serif;font-weight:900;
+  font-size:23px;font-size:clamp(19px,2.5vw,28px);line-height:1.15;text-transform:uppercase;
+  -webkit-appearance:none;appearance:none;touch-action:manipulation;
+  --oc:#1FA84A;--otint:#fff;--osh:rgba(18,48,74,.25);--otxt:#12304A;
+  border:7px solid var(--oc);background:var(--otint);color:var(--otxt);
+  box-shadow:0 9px 0 var(--osh);
+  -webkit-transition:-webkit-transform .12s,box-shadow .12s;transition:transform .12s,box-shadow .12s;
+}
+/* franja de color en la parte superior de cada tarjeta */
+.opt:before{
+  content:'';position:absolute;top:0;left:0;right:0;height:12px;background:var(--oc);
+  border-radius:12px 12px 0 0;
+}
+.opt.c1{--oc:#1FA84A;--otint:#EAFBEF;--osh:#127031;--otxt:#0E5B28}
+.opt.c2{--oc:#00A7D6;--otint:#E5F6FC;--osh:#00728f;--otxt:#064E63}
+.opt.c3{--oc:#E8368F;--otint:#FDEDF5;--osh:#a92066;--otxt:#8C1651}
+.opt.c4{--oc:#F58A07;--otint:#FFF4E2;--osh:#b96500;--otxt:#7A4300}
+.opt .key{
+  position:absolute;top:-16px;left:-14px;background:var(--oc);color:#fff;
+  width:40px;height:40px;border-radius:50%;font-size:20px;line-height:40px;text-align:center;
+  border:4px solid #fff;box-sizing:content-box;
+}
+@media (hover:hover){
+  .opt:hover:not(:disabled){-webkit-transform:translateY(-5px);transform:translateY(-5px);box-shadow:0 14px 0 var(--osh)}
+  .btn:hover{-webkit-transform:translateY(-3px);transform:translateY(-3px)}
+}
+.opt:active:not(:disabled){-webkit-transform:translateY(3px);transform:translateY(3px);box-shadow:0 4px 0 var(--osh)}
+.opt.good{--oc:#1FA84A;--osh:#127031;background:#1FA84A;color:#fff}
+.opt.bad{--oc:#E23B2E;--osh:#9b2318;background:#E23B2E;color:#fff}
+.opt.dim{opacity:.4}
+.opt:disabled{cursor:default}
+.opt .mark{position:absolute;top:-16px;right:-12px;font-size:34px;line-height:1}
+
+/* ---------- RETROALIMENTACIÓN ---------- */
+.feedback{margin-top:22px;border-radius:22px;padding:18px 22px;display:none}
+.feedback.show{display:block;-webkit-animation:pop .25s ease-out;animation:pop .25s ease-out}
+@-webkit-keyframes pop{from{-webkit-transform:scale(.96);opacity:0}to{-webkit-transform:scale(1);opacity:1}}
+@keyframes pop{from{transform:scale(.96);opacity:0}to{transform:scale(1);opacity:1}}
+.feedback.yes{background:#E6F8EC;border:5px solid var(--selva)}
+.feedback.no{background:#FDECEA;border:5px solid var(--rojo)}
+.fb-title{font-family:'Baloo 2','Trebuchet MS',cursive;font-size:27px;font-size:clamp(22px,2.6vw,32px)}
+.fb-rule{font-size:20px;font-size:clamp(17px,1.9vw,22px);font-weight:700;margin-top:6px}
+.fb-chain{
+  margin-top:10px;font-weight:900;font-size:22px;font-size:clamp(18px,2.1vw,26px);
+  background:var(--tinta);color:#fff;display:inline-block;padding:8px 16px;border-radius:14px;
+}
+.row-end{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-justify-content:flex-end;justify-content:flex-end;margin-top:18px}
+.btn{
+  font-family:'Baloo 2','Trebuchet MS',cursive;font-size:24px;font-size:clamp(20px,2.4vw,28px);
+  border:none;border-radius:20px;-webkit-appearance:none;appearance:none;touch-action:manipulation;
+  padding:14px 30px;cursor:pointer;background:var(--caribe);color:#fff;box-shadow:0 8px 0 #017d85;
+}
+.btn:active{-webkit-transform:translateY(3px);transform:translateY(3px);box-shadow:0 3px 0 #017d85}
+.btn.green{background:var(--selva);box-shadow:0 8px 0 #127031}
+.btn.yellow{background:var(--amarillo);color:var(--tinta);box-shadow:0 8px 0 #c9a600}
+.btn.pink{background:var(--magenta);box-shadow:0 8px 0 #a8225f}
+
+/* ---------- PANTALLAS ---------- */
+.center{text-align:center}
+.hero-title{font-family:'Baloo 2','Trebuchet MS',cursive;font-size:54px;font-size:clamp(38px,6.5vw,74px);line-height:1.05;color:var(--tinta)}
+.hero-title em{font-style:normal;color:var(--selva)}
+.hero-sub{font-size:22px;font-size:clamp(18px,2.2vw,26px);font-weight:800;margin-top:14px}
+.rules{display:-ms-grid;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));grid-gap:14px;gap:14px;margin:26px 0}
+.rule{border-radius:20px;padding:16px;color:#fff;text-align:left;font-weight:800;font-size:18px;font-size:clamp(16px,1.8vw,20px)}
+.rule b{display:block;font-family:'Baloo 2','Trebuchet MS',cursive;font-size:22px;font-size:clamp(19px,2.1vw,24px);margin-bottom:4px}
+.r1{background:var(--selva)}.r2{background:#00A7D6}.r3{background:var(--magenta)}.r4{background:#F58A07}.r5{background:var(--tinta)}
+.score-big{font-family:'Baloo 2','Trebuchet MS',cursive;font-size:90px;font-size:clamp(60px,12vw,130px);line-height:1;color:var(--selva)}
+.stars{font-size:48px;font-size:clamp(38px,7vw,64px);letter-spacing:8px}
+.btnrow{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:center;justify-content:center;margin-top:19px}
+.btnrow > *{margin:5px 7px}
+.missed{margin-top:22px;text-align:left}
+.missed h3{font-family:'Baloo 2','Trebuchet MS',cursive;font-size:23px;font-size:clamp(20px,2.3vw,26px);margin-bottom:10px}
+.missed li{font-weight:800;font-size:18px;font-size:clamp(16px,1.8vw,20px);margin-bottom:8px;list-style:none;
+  background:#FFF3F1;border-left:8px solid var(--rojo);padding:8px 12px;border-radius:10px}
+.hide{display:none}
+.footer{text-align:center;font-weight:700;margin:18px 0 6px;color:#456}
+@media (prefers-reduced-motion: reduce){*{-webkit-animation:none!important;animation:none!important;-webkit-transition:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="topbar">
+    <div class="brand">HOW DO YOU SAY IT? <span>· Protect the Earth</span></div>
+    <div class="stats">
+      <div class="chip">Tanda <b id="tandaNum">1</b>/15</div>
+      <div class="chip">Pregunta <b id="qNum">1</b>/10</div>
+      <div class="chip mag">Puntos <b id="scoreNum">0</b></div>
+      <button class="iconbtn" id="soundBtn" title="Activar o silenciar el sonido">🔊 Sonido</button>
+    </div>
+  </div>
+
+  <!-- PANTALLA INICIO -->
+  <section id="screenStart" class="card center">
+    <h1 class="hero-title">Comparativos y <em>Superlativos</em></h1>
+    <p class="hero-sub">Módulo 4 · English Please! Fast Track · Grado 9°<br>150 preguntas en 15 tandas de 10. Elige cómo se dice en inglés.</p>
+    <div class="rules">
+      <div class="rule r1"><b>1 sílaba</b>tall → taller → the tallest</div>
+      <div class="rule r4"><b>1 sílaba CVC</b>big → bigger → the biggest</div>
+      <div class="rule r2"><b>2 sílabas en -y</b>busy → busier → the busiest</div>
+      <div class="rule r3"><b>2+ sílabas</b>dangerous → more dangerous → the most dangerous</div>
+      <div class="rule r5"><b>Irregulares</b>good → better → the best</div>
+    </div>
+    <button class="btn green" id="startBtn">Empezar a jugar</button>
+  </section>
+
+  <!-- PANTALLA JUEGO -->
+  <section id="screenQuiz" class="hide">
+    <div class="leaves" id="leaves"></div>
+    <div class="card">
+      <div class="grid">
+        <div>
+          <div class="qnum" id="qBadge">Pregunta 1</div>
+          <div class="qtext">How do you say in English<br>
+            <span class="marker" id="qPrompt">Más peligroso que</span> <span class="tail">… ?</span>
+          </div>
+        </div>
+        <div class="options" id="options"></div>
+      </div>
+      <div class="feedback" id="feedback">
+        <div class="fb-title" id="fbTitle"></div>
+        <div class="fb-rule" id="fbRule"></div>
+        <div class="fb-chain" id="fbChain"></div>
+      </div>
+      <div class="row-end"><button class="btn hide" id="nextBtn">Siguiente</button></div>
+    </div>
+  </section>
+
+  <!-- PANTALLA RESULTADO DE TANDA -->
+  <section id="screenTanda" class="card center hide">
+    <div class="qnum">Tanda terminada</div>
+    <div class="score-big" id="tandaScore">5/5</div>
+    <div class="stars" id="tandaStars">⭐⭐⭐</div>
+    <p class="hero-sub" id="tandaMsg"></p>
+    <div class="missed hide" id="missedBox"><h3>Para repasar</h3><ul id="missedList"></ul></div>
+    <div class="btnrow">
+      <button class="btn green" id="nextTandaBtn">Siguiente tanda</button>
+      <button class="btn yellow" id="repeatTandaBtn">Repetir esta tanda</button>
+      <button class="btn pink" id="finishBtn">Terminar y ver total</button>
+    </div>
+  </section>
+
+  <!-- PANTALLA FINAL -->
+  <section id="screenEnd" class="card center hide">
+    <h1 class="hero-title">¡Buen trabajo!</h1>
+    <div class="score-big" id="finalScore">0</div>
+    <p class="hero-sub" id="finalMsg"></p>
+    <div class="btnrow"><button class="btn green" id="restartBtn">Jugar otra vez</button></div>
+  </section>
+
+  <p class="footer">I. E. Simón Araujo · Sincelejo, Sucre · Humanidades — Inglés</p>
+</div>
+
+<script>
+/* ============================================================
+   BANCO DE ADJETIVOS (Módulo 4 · Unidades 1, 2 y 3)
+   g = grupo de regla: 1A, 1B, 2, EX, 3, 4
+   ============================================================ */
+const ADJ = [
+  /* --- GRUPO 1A: una sílaba, + er / + est --- */
+  {b:'tall',   es:'alto',      esF:'alta',      c:'TALLER',   s:'THE TALLEST',   g:'1A'},
+  {b:'high',   es:'elevado',   esF:'elevada',   c:'HIGHER',   s:'THE HIGHEST',   g:'1A'},
+  {b:'wide',   es:'ancho',     esF:'ancha',     c:'WIDER',    s:'THE WIDEST',    g:'1A'},
+  {b:'long',   es:'largo',     esF:'larga',     c:'LONGER',   s:'THE LONGEST',   g:'1A'},
+  {b:'cold',   es:'frío',      esF:'fría',      c:'COLDER',   s:'THE COLDEST',   g:'1A'},
+  {b:'warm',   es:'cálido',    esF:'cálida',    c:'WARMER',   s:'THE WARMEST',   g:'1A'},
+  {b:'calm',   es:'calmado',   esF:'calmada',   c:'CALMER',   s:'THE CALMEST',   g:'1A'},
+  {b:'wild',   es:'salvaje',                    c:'WILDER',   s:'THE WILDEST',   g:'1A'},
+  {b:'clean',  es:'limpio',    esF:'limpia',    c:'CLEANER',  s:'THE CLEANEST',  g:'1A'},
+  {b:'small',  es:'pequeño',   esF:'pequeña',   c:'SMALLER',  s:'THE SMALLEST',  g:'1A'},
+  {b:'large',  es:'extenso',   esF:'extensa',   c:'LARGER',   s:'THE LARGEST',   g:'1A'},
+  {b:'slow',   es:'lento',     esF:'lenta',     c:'SLOWER',   s:'THE SLOWEST',   g:'1A'},
+  {b:'fast',   es:'rápido',    esF:'rápida',    c:'FASTER',   s:'THE FASTEST',   g:'1A'},
+  {b:'low',    es:'bajo',      esF:'baja',      c:'LOWER',    s:'THE LOWEST',    g:'1A'},
+  {b:'cheap',  es:'barato',    esF:'barata',    c:'CHEAPER',  s:'THE CHEAPEST',  g:'1A'},
+  {b:'full',   es:'lleno',     esF:'llena',     c:'FULLER',   s:'THE FULLEST',   g:'1A'},
+  {b:'safe',   es:'seguro',    esF:'segura',    c:'SAFER',    s:'THE SAFEST',    g:'1A'},
+  {b:'old',    es:'viejo',     esF:'vieja',     c:'OLDER',    s:'THE OLDEST',    g:'1A'},
+  {b:'new',    es:'nuevo',     esF:'nueva',     c:'NEWER',    s:'THE NEWEST',    g:'1A'},
+
+  /* --- GRUPO 1B: una sílaba CVC, se dobla la consonante --- */
+  {b:'big',    es:'grande',                     c:'BIGGER',   s:'THE BIGGEST',   g:'1B'},
+  {b:'hot',    es:'caliente',                   c:'HOTTER',   s:'THE HOTTEST',   g:'1B'},
+  {b:'wet',    es:'húmedo',    esF:'húmeda',    c:'WETTER',   s:'THE WETTEST',   g:'1B'},
+
+  /* --- GRUPO 2: dos sílabas terminadas en -y --- */
+  {b:'busy',   es:'concurrido',esF:'concurrida',c:'BUSIER',   s:'THE BUSIEST',   g:'2'},
+  {b:'noisy',  es:'ruidoso',   esF:'ruidosa',   c:'NOISIER',  s:'THE NOISIEST',  g:'2'},
+  {b:'dirty',  es:'sucio',     esF:'sucia',     c:'DIRTIER',  s:'THE DIRTIEST',  g:'2'},
+  {b:'easy',   es:'fácil',                      c:'EASIER',   s:'THE EASIEST',   g:'2'},
+  {b:'heavy',  es:'pesado',    esF:'pesada',    c:'HEAVIER',  s:'THE HEAVIEST',  g:'2'},
+  {b:'cloudy', es:'nublado',   esF:'nublada',   c:'CLOUDIER', s:'THE CLOUDIEST', g:'2'},
+  {b:'windy',  es:'ventoso',   esF:'ventosa',   c:'WINDIER',  s:'THE WINDIEST',  g:'2'},
+  {b:'lazy',   es:'perezoso',  esF:'perezosa',  c:'LAZIER',   s:'THE LAZIEST',   g:'2'},
+  {b:'empty',  es:'vacío',     esF:'vacía',     c:'EMPTIER',  s:'THE EMPTIEST',  g:'2'},
+
+  /* --- EXCEPCIONES: dos sílabas que igual usan -er / -est --- */
+  {b:'narrow', es:'estrecho',  esF:'estrecha',  c:'NARROWER', s:'THE NARROWEST', g:'EX'},
+  {b:'quiet',  es:'silencioso',esF:'silenciosa',c:'QUIETER',  s:'THE QUIETEST',  g:'EX'},
+
+  /* --- GRUPO 3: dos o más sílabas, more / the most --- */
+  {b:'dangerous',  es:'peligroso',   esF:'peligrosa',   c:'MORE DANGEROUS',  s:'THE MOST DANGEROUS',  g:'3'},
+  {b:'beautiful',  es:'hermoso',     esF:'hermosa',     c:'MORE BEAUTIFUL',  s:'THE MOST BEAUTIFUL',  g:'3'},
+  {b:'colourful',  es:'colorido',    esF:'colorida',    c:'MORE COLOURFUL',  s:'THE MOST COLOURFUL',  g:'3'},
+  {b:'important',  es:'importante',                     c:'MORE IMPORTANT',  s:'THE MOST IMPORTANT',  g:'3'},
+  {b:'famous',     es:'famoso',      esF:'famosa',      c:'MORE FAMOUS',     s:'THE MOST FAMOUS',     g:'3'},
+  {b:'interesting',es:'interesante',                    c:'MORE INTERESTING',s:'THE MOST INTERESTING',g:'3'},
+  {b:'peaceful',   es:'apacible',                       c:'MORE PEACEFUL',   s:'THE MOST PEACEFUL',   g:'3'},
+  {b:'crowded',    es:'atestado',    esF:'atestada',    c:'MORE CROWDED',    s:'THE MOST CROWDED',    g:'3'},
+  {b:'polluted',   es:'contaminado', esF:'contaminada', c:'MORE POLLUTED',   s:'THE MOST POLLUTED',   g:'3'},
+  {b:'expensive',  es:'caro',        esF:'cara',        c:'MORE EXPENSIVE',  s:'THE MOST EXPENSIVE',  g:'3'},
+  {b:'modern',     es:'moderno',     esF:'moderna',     c:'MORE MODERN',     s:'THE MOST MODERN',     g:'3'},
+  {b:'active',     es:'activo',      esF:'activa',      c:'MORE ACTIVE',     s:'THE MOST ACTIVE',     g:'3'},
+  {b:'tropical',   es:'tropical',                       c:'MORE TROPICAL',   s:'THE MOST TROPICAL',   g:'3'},
+  {b:'efficient',  es:'eficiente',                      c:'MORE EFFICIENT',  s:'THE MOST EFFICIENT',  g:'3'},
+  {b:'valuable',   es:'valioso',     esF:'valiosa',     c:'MORE VALUABLE',   s:'THE MOST VALUABLE',   g:'3'},
+  {b:'biodiverse', es:'biodiverso',  esF:'biodiversa',  c:'MORE BIODIVERSE', s:'THE MOST BIODIVERSE', g:'3'},
+  {b:'powerful',   es:'poderoso',    esF:'poderosa',    c:'MORE POWERFUL',   s:'THE MOST POWERFUL',   g:'3'},
+  {b:'reliable',   es:'confiable',                      c:'MORE RELIABLE',   s:'THE MOST RELIABLE',   g:'3'},
+  {b:'renewable',  es:'renovable',                      c:'MORE RENEWABLE',  s:'THE MOST RENEWABLE',  g:'3'},
+  {b:'durable',    es:'duradero',    esF:'duradera',    c:'MORE DURABLE',    s:'THE MOST DURABLE',    g:'3'},
+  {b:'harmful',    es:'dañino',      esF:'dañina',      c:'MORE HARMFUL',    s:'THE MOST HARMFUL',    g:'3'},
+  {b:'difficult',  es:'difícil',                        c:'MORE DIFFICULT',  s:'THE MOST DIFFICULT',  g:'3'},
+
+  /* --- GRUPO 4: irregulares --- */
+  {b:'good', es:'bueno', c:'BETTER',  s:'THE BEST',     g:'4', esc:'Mejor que',        ess:'El mejor'},
+  {b:'bad',  es:'malo',  c:'WORSE',   s:'THE WORST',    g:'4', esc:'Peor que',         ess:'El peor'},
+  {b:'far',  es:'lejano',c:'FURTHER', s:'THE FURTHEST', g:'4', esc:'Más lejano que',   ess:'El más lejano'}
+];
+
+const RULES = {
+  '1A':'Adjetivo de 1 sílaba: se añade -ER para el comparativo y THE …-EST para el superlativo.',
+  '1B':'Adjetivo de 1 sílaba con consonante-vocal-consonante: se DUPLICA la consonante final antes de -ER / -EST.',
+  '2' :'Adjetivo de 2 sílabas terminado en -Y: la -y cambia a -IER (comparativo) y a -IEST (superlativo).',
+  'EX':'Excepción: adjetivos de 2 sílabas como narrow y quiet también usan -ER / -EST.',
+  '3' :'Adjetivo de 2 o más sílabas: MORE + adjetivo (comparativo) y THE MOST + adjetivo (superlativo). Nunca -er/-est.',
+  '4' :'Adjetivo irregular: tiene forma propia y hay que memorizarla.'
+};
+
+/* ============================ UTILIDADES ============================ */
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const comp = a => a.c + ' THAN';
+const sup  = a => a.s;
+
+/* Construye exactamente 150 preguntas */
+function buildPool(){
+  const base = [];
+  ADJ.forEach(a=>{
+    base.push({adj:a, type:'comp', prompt: a.esc || ('Más '+a.es+' que')});
+    base.push({adj:a, type:'sup',  prompt: a.ess || ('El más '+a.es)});
+  });
+  const fem = [];
+  ADJ.filter(a=>a.esF).forEach(a=>{
+    fem.push({adj:a, type:'comp', prompt:'Más '+a.esF+' que'});
+    fem.push({adj:a, type:'sup',  prompt:'La más '+a.esF});
+  });
+  shuffle(fem);
+  const need = Math.max(0, 150 - base.length);
+  const pool = base.concat(fem.slice(0, need)).slice(0,150);
+  return shuffle(pool);
+}
+
+/* Genera las 4 opciones: correcta + la otra forma del mismo adjetivo + 2 comparativos distintos */
+function buildOptions(q){
+  const a = q.adj;
+  const correct = q.type==='comp' ? comp(a) : sup(a);
+  const partner = q.type==='comp' ? sup(a)  : comp(a);
+  const others  = shuffle(ADJ.filter(x=>x.b!==a.b));
+  const extra = [];
+  for(const o of others){
+    const t = comp(o);
+    if(t!==correct && t!==partner && !extra.includes(t)) extra.push(t);
+    if(extra.length===2) break;
+  }
+  return {correct, options: shuffle([correct, partner, ...extra])};
+}
+
+/* ============================ ESTADO ============================ */
+let pool=[], tanda=0, idx=0, score=0, tandaHits=0, missed=[], locked=false, sound=true;
+const PREGUNTAS_POR_TANDA = 10;
+const TOTAL_TANDAS = 15;
+
+const $ = id => document.getElementById(id);
+const screens = {start:$('screenStart'), quiz:$('screenQuiz'), tanda:$('screenTanda'), end:$('screenEnd')};
+function show(name){Object.keys(screens).forEach(k=>screens[k].classList.toggle('hide', k!==name));}
+
+/* ============================ SONIDO ============================ */
+let actx=null;
+function initAudio(){          /* Safari/iOS: el audio solo arranca tras un toque del usuario */
+  try{
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if(!AC) return;
+    actx = actx || new AC();
+    if(actx.state === 'suspended' && actx.resume) actx.resume();
+  }catch(e){}
+}
+function beep(ok){
+  if(!sound) return;
+  initAudio();
+  if(!actx) return;
+  try{
+    const notes = ok ? [523,659,784] : [220,175];
+    notes.forEach((f,i)=>{
+      const o=actx.createOscillator(), g=actx.createGain();
+      o.type='triangle'; o.frequency.value=f;
+      g.gain.setValueAtTime(.0001, actx.currentTime+i*.09);
+      g.gain.exponentialRampToValueAtTime(.16, actx.currentTime+i*.09+.02);
+      g.gain.exponentialRampToValueAtTime(.0001, actx.currentTime+i*.09+.22);
+      o.connect(g); g.connect(actx.destination);
+      o.start(actx.currentTime+i*.09); o.stop(actx.currentTime+i*.09+.25);
+    });
+  }catch(e){}
+}
+
+/* ============================ RENDER ============================ */
+function renderLeaves(marks){
+  const box=$('leaves'); box.innerHTML='';
+  for(let i=0;i<PREGUNTAS_POR_TANDA;i++){
+    const d=document.createElement('div');
+    d.className='leaf'+(marks[i]===true?' ok':marks[i]===false?' no':'')+(i===idx?' now':'');
+    box.appendChild(d);
+  }
+}
+let marks=[];
+
+function loadQuestion(){
+  locked=false;
+  const q = pool[tanda*PREGUNTAS_POR_TANDA + idx];
+  const {correct, options} = buildOptions(q);
+  $('qPrompt').textContent = q.prompt;
+  $('qBadge').textContent = 'Pregunta ' + (tanda*PREGUNTAS_POR_TANDA + idx + 1) + ' de 150';
+  $('qNum').textContent = idx+1;
+  $('tandaNum').textContent = tanda+1;
+  $('scoreNum').textContent = score;
+  renderLeaves(marks);
+
+  const box=$('options'); box.innerHTML='';
+  options.forEach((txt,i)=>{
+    const b=document.createElement('button');
+    b.className='opt c'+(i+1); b.type='button'; b.dataset.txt = txt;
+    b.innerHTML = '<span class="key">'+(i+1)+'</span>' + txt;
+    b.onclick = ()=>answer(b, txt, correct, q);
+    box.appendChild(b);
+  });
+  $('feedback').className='feedback';
+  $('nextBtn').classList.add('hide');
+}
+
+function answer(btn, txt, correct, q){
+  if(locked) return;
+  locked = true;
+  const ok = txt === correct;
+  const buttons = [...document.querySelectorAll('.opt')];
+  buttons.forEach(b=>{
+    b.disabled = true;
+    if(b.dataset.txt === correct){
+      b.classList.add('good');
+      b.insertAdjacentHTML('beforeend','<span class="mark">✅</span>');
+    } else if(b !== btn){
+      b.classList.add('dim');
+    }
+  });
+  if(!ok){
+    btn.classList.add('bad');
+    btn.insertAdjacentHTML('beforeend','<span class="mark">❌</span>');
+  }
+
+  if(ok){ score+=10; tandaHits++; }
+  else{ missed.push(q.prompt + ' → ' + correct); }
+  marks[idx] = ok;
+  $('scoreNum').textContent = score;
+  renderLeaves(marks);
+  beep(ok);
+
+  const a=q.adj;
+  $('feedback').className = 'feedback show ' + (ok?'yes':'no');
+  $('fbTitle').textContent = ok ? '¡Correcto! ' + correct : 'La respuesta correcta es: ' + correct;
+  $('fbRule').textContent = RULES[a.g];
+  $('fbChain').textContent = a.b + ' → ' + a.c.toLowerCase() + ' → ' + a.s.toLowerCase();
+  $('nextBtn').classList.remove('hide');
+  $('nextBtn').textContent = (idx===PREGUNTAS_POR_TANDA-1) ? 'Ver resultado de la tanda' : 'Siguiente';
+  $('nextBtn').focus();
+}
+
+function next(){
+  if(idx < PREGUNTAS_POR_TANDA-1){ idx++; loadQuestion(); }
+  else endTanda();
+}
+
+function startTanda(){
+  idx=0; tandaHits=0; marks=new Array(PREGUNTAS_POR_TANDA).fill(null); missed=[];
+  show('quiz'); loadQuestion();
+}
+
+function endTanda(){
+  show('tanda');
+  $('tandaScore').textContent = tandaHits + '/' + PREGUNTAS_POR_TANDA;
+  $('tandaStars').textContent = tandaHits===10?'⭐⭐⭐⭐⭐': tandaHits>=9?'⭐⭐⭐⭐': tandaHits>=8?'⭐⭐⭐': tandaHits>=7?'⭐⭐': tandaHits>=6?'⭐':'✨';
+  const msg = tandaHits===10 ? '¡Perfecto! Dominas las reglas de esta tanda.'
+            : tandaHits>=8  ? 'Muy bien. Revisa los errores de la lista y sigue.'
+            : tandaHits>=6  ? 'Vas bien: repasa las reglas de las tarjetas del inicio.'
+            : tandaHits>=4  ? 'Repite la tanda y fíjate en las sílabas de cada adjetivo.'
+            :                 'Vuelve a las reglas del inicio y repite la tanda con calma.';
+  $('tandaMsg').textContent = msg;
+  const box=$('missedBox'), list=$('missedList');
+  list.innerHTML='';
+  if(missed.length){
+    box.classList.remove('hide');
+    missed.forEach(m=>{const li=document.createElement('li'); li.textContent=m; list.appendChild(li);});
+  } else box.classList.add('hide');
+  $('nextTandaBtn').classList.toggle('hide', tanda>=TOTAL_TANDAS-1);
+}
+
+function finish(){
+  show('end');
+  const asked = (tanda+1)*PREGUNTAS_POR_TANDA;
+  $('finalScore').textContent = score + ' pts';
+  $('finalMsg').textContent = 'Respondiste ' + asked + ' preguntas de 150. Aciertos: ' + (score/10) + '.';
+}
+
+/* ============================ EVENTOS ============================ */
+$('startBtn').onclick = ()=>{ initAudio(); pool=buildPool(); tanda=0; score=0; startTanda(); };
+$('nextBtn').onclick = next;
+$('nextTandaBtn').onclick = ()=>{ tanda++; startTanda(); };
+$('repeatTandaBtn').onclick = ()=>{ score -= tandaHits*10; startTanda(); };
+$('finishBtn').onclick = finish;
+$('restartBtn').onclick = ()=>{ show('start'); $('scoreNum').textContent='0'; };
+$('soundBtn').onclick = e=>{ sound=!sound; e.target.textContent = sound?'🔊 Sonido':'🔇 Sonido'; };
+
+document.addEventListener('keydown', e=>{
+  if(screens.quiz.classList.contains('hide')) return;
+  if(['1','2','3','4'].includes(e.key)){
+    const b=document.querySelectorAll('.opt')[Number(e.key)-1];
+    if(b && !b.disabled) b.click();
+  }
+  if((e.key==='Enter'||e.key===' ') && locked){ e.preventDefault(); next(); }
+});
+</script>
+</body>
+</html>
